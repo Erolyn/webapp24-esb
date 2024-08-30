@@ -1,0 +1,22 @@
+{
+  "name": "webapp24-esb",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.12.1",
+		"hono": "^4.5.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+		"concurrently": "8.2.2",
+		"tsx": "^4.17.0",
+		"typescript": "^5.5.4",
+		"vite": "^5.4.2"
+  }
+}
