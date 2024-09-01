@@ -4,10 +4,59 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Portfolio</title>
   </head>
+
   <body>
-    <div id="app"></div>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a> </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About this portfolio</h2>
+        <p>Blablablablablab</p>
+      </section>
+      
+      <section id="projects">
+        <h2>My projects</h2>
+        <div id="projects-container">
+
+        </div>
+      </section>
+
+      <form id="project-form">
+        <h3>Add a New Project</h3>
+          <label for="title">Project Title:</label>
+          <input type="text" id="title" name="title" required>
+
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" required></textarea>
+
+          <label for="startDate">Start Date</label>
+          <input type="date" id="startDate" name="startDate" required>
+
+          <label for="endDate">End Date</label>
+          <input type="date" id="endDate" name="endDate" required>
+
+          <button type="submit">Add Project</button>
+      </form>
+    </main>
+
+    <footer>
+      <section id="contact">
+        <h2>Contact</h2>
+      </section>
+    </footer>
+
+    <script type="module" src="/src/components/Project.ts"></script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
