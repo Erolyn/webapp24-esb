@@ -4,7 +4,7 @@ function renderProjects(projects: any[]) {
     if (!projectsContainer) return;
 
     projects.forEach((project) => {
-        const projectCard = document.createElement("div");
+        const projectCard = document.createElement("article");
         projectCard.className = "project-card";
 
         projectCard.innerHTML = `
@@ -13,8 +13,9 @@ function renderProjects(projects: any[]) {
             <p>${project.description}</p>
             <p><strong>Start Date:</strong> ${project.startDate}</p>
             <p><strong>End Date:</strong> ${project.endDate}</p>
-            <p><strong>Status:</strong> ${project.status}</p>
-        `;
+            `
+            //<p><strong>Status:</strong> ${project.status}</p>
+        ;
 
         projectsContainer.appendChild(projectCard);
     });
