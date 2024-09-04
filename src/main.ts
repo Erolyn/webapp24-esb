@@ -63,9 +63,24 @@ function addProject(event: Event) {
   (document.getElementById("project-form") as HTMLFormElement).reset();
 };
 
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+  localStorage.setItem("dark-mode", document.body.classList.contains("dark-mode") ? "enabled" : "disabled");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const addProjectsLink = document.querySelector('a[href="#add-projects"]');
   const projectsLink = document.querySelector('a[href="#projects"]');
+  const toggleDarkModeButton = document.getElementById("toggle-darkmode");
+
+  const darkModePreference = localStorage.getItem("dark-mode");
+  if (darkModePreference === "enabled") {
+    document.body.classList.add("dark-mode");
+  }
+
+  if (toggleDarkModeButton) {
+    toggleDarkModeButton.addEventListener("click", toggleDarkMode);
+  }
 
   if (addProjectsLink) {
     addProjectsLink.addEventListener("click", (event) => {
@@ -106,7 +121,10 @@ function renderProjects(projects: any[]) {
 
     projectCard.innerHTML = `
       <h3>${project.title}</h3>
-      <p>${project.description}</p>`;
+      <p>${project.description}</p>
+      <button>Read More</a></button>`;
+
+      // Button-ref: <a href="${project.link}">
       // <img src="${project.image}" alt="${project.title}" class="project-image">
       // <p><strong>Start Date:</strong> ${project.startDate}</p>
       // <p><strong>End Date:</strong> ${project.endDate}</p>
@@ -146,3 +164,4 @@ function renderForm() {
     form.addEventListener("submit", addProject);
   }
 };
+
