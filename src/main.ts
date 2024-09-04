@@ -1,3 +1,68 @@
+import { UUID } from "crypto";
+
+// TODO: Refactor code
+
+      // 1. Avoid using global namescape, look into IIFE
+      // 2. Use async/await instead of promises
+      // 3. Use TypeScript more consistently
+      // 4. Better error handling
+      // 5. Add comments
+      // 6. Add handling for image upload (as optional field)
+
+const projectsURL = "http://localhost:3999/projects";
+const projectsContainer = document.getElementById("projects-container");
+const projectFormContainer = document.getElementById("project-form-container");
+
+function fetchProjects() {
+  fetch(projectsURL)
+    .then((response) => response.json())
+    .then((projects) => {
+      renderProjects(projects);
+    })
+    .catch((error) => {
+      console.error("Error fetching projects:", error);
+    });
+};
+
+function addProject(event: Event) {
+  event.preventDefault();
+  console.log("Form submitted");
+
+  const id: UUID = crypto.randomUUID();
+  const title: string = (document.getElementById("title") as HTMLInputElement).value;
+  const description: string = (document.getElementById("description") as HTMLTextAreaElement).value;
+  const startDate: Date = new Date((document.getElementById("startDate") as HTMLInputElement).value);
+  const endDate: Date = new Date((document.getElementById("endDate") as HTMLInputElement).value);
+  const status: string = "1"; // 1 - active, 0 - inactive
+  const createdAt: Date = new Date();
+
+  const newProject = {
+    id,
+    title,
+    description,
+    startDate,
+    endDate,
+    status,
+    createdAt
+  };
+
+  fetch(projectsURL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newProject),
+  })
+    .then(() => {
+      fetchProjects();
+    })
+    .catch((error) => {
+      console.error("Error adding project:", error);
+    });
+
+  (document.getElementById("project-form") as HTMLFormElement).reset();
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   const addProjectsLink = document.querySelector('a[href="#add-projects"]');
   const projectsLink = document.querySelector('a[href="#projects"]');
@@ -20,8 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function renderProjects(projects: any[]) {
-  const projectsContainer = document.getElementById("projects-container");
-  const projectFormContainer = document.getElementById("project-form-container");
 
   if (!projectsContainer || !projectFormContainer) return;
 
@@ -51,11 +114,9 @@ function renderProjects(projects: any[]) {
 
     projectsContainer.appendChild(projectCard);
   });
-}
+};
 
 function renderForm() {
-  const projectsContainer = document.getElementById("projects-container");
-  const projectFormContainer = document.getElementById("project-form-container");
 
   if (!projectsContainer || !projectFormContainer) return;
 
@@ -84,54 +145,4 @@ function renderForm() {
   if (form) {
     form.addEventListener("submit", addProject);
   }
-}
-
-function fetchProjects() {
-  fetch("http://localhost:3999/projects")
-    .then((response) => response.json())
-    .then((projects) => {
-      renderProjects(projects);
-    })
-    .catch((error) => {
-      console.error("Error fetching projects:", error);
-    });
-}
-
-function addProject(event: Event) {
-  event.preventDefault();
-  console.log("Form submitted");
-
-  const id = crypto.randomUUID();
-  const title = (document.getElementById("title") as HTMLInputElement).value;
-  const description = (document.getElementById("description") as HTMLTextAreaElement).value;
-  const startDate = (document.getElementById("startDate") as HTMLInputElement).value;
-  const endDate = (document.getElementById("endDate") as HTMLInputElement).value;
-  const status = "1"; // 1 - active, 0 - inactive
-  const createdAt = new Date().toISOString();
-
-  const newProject = {
-    id,
-    title,
-    description,
-    startDate,
-    endDate,
-    status,
-    createdAt
-  };
-
-  fetch("http://localhost:3999/projects", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newProject),
-  })
-    .then(() => {
-      fetchProjects();
-    })
-    .catch((error) => {
-      console.error("Error adding project:", error);
-    });
-
-  (document.getElementById("project-form") as HTMLFormElement).reset();
-}
+};
