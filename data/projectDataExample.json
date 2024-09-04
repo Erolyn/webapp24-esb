@@ -5,6 +5,7 @@
     "description": "Description 1",
     "startDate": "2024-08-20",
     "endDate": "",
-    "status": "1"
+    "status": "1",
+    "createdAt": "2024-08-20"
 }
 

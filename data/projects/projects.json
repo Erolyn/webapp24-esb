@@ -1,26 +1,20 @@
 [
   {
-    "id": "b25d89f6-8862-4d79-995e-79333f4bfc87",
-    "title": "Title 1",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In finibus pulvinar luctus. Donec at libero suscipit, vehicula urna eu, ullamcorper risus.",
-    "startDate": "2024-09-04",
+    "id": "eeb90a0f-26d1-4721-a398-867d697c431b",
+    "title": "Project 1",
+    "description": "This is a small project just to test if the portfolio works.",
+    "startDate": "2024-04-09",
     "endDate": "",
-    "status": "1"
+    "status": "1",
+    "createdAt": "2024-09-04T13:15:41.145Z"
   },
   {
-    "id": "dc144380-35cb-4686-9f81-2426db4dac62",
-    "title": "Title 2",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In finibus pulvinar luctus. Donec at libero suscipit, vehicula urna eu, ullamcorper risus.",
+    "id": "4ad723ef-10b9-4c06-92d2-d623a5c38917",
+    "title": "project 2",
+    "description": "This is another description for this to see if it works.",
     "startDate": "2024-09-04",
     "endDate": "",
-    "status": "1"
-  },
-  {
-    "id": "c161753b-301f-4b10-9bdd-9d111d8f547a",
-    "title": "Title 3",
-    "description": "Dette er en test. Det kommer flere tester. Høhø.",
-    "startDate": "1212-12-12",
-    "endDate": "",
-    "status": "1"
+    "status": "1",
+    "createdAt": "2024-09-04T13:28:40.066Z"
   }
 ]
