@@ -4,7 +4,7 @@
   --tertiary-color: #1b1b1b;
   --primary-text-color: #000;
   --secondary-text-color: #fff;
-  --highlight-text-color: #36d5f9;
+  --highlight-text-color: #14bd93;
 }
 
 /* Reset default styles */
@@ -26,6 +26,16 @@ header {
   padding: 20px;
   min-height: 50px;
   
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  color: var(--highlight-text-color);
 }
 
 nav ul {
@@ -82,7 +92,7 @@ footer {
   min-height: 50px;
 }
 
-/* Projects section styles */
+/* Project section styles */
 #projects-container {
   display: grid;
   width: 80%;
@@ -141,8 +151,6 @@ footer {
   border-style: none;
   border-radius: 7px;
 }
-
-
 
 #project-form button {
   background-color: var(--highlight-text-color);
