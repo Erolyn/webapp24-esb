@@ -1,3 +1,12 @@
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #141414;
+  --tertiary-color: #1b1b1b;
+  --primary-text-color: #000;
+  --secondary-text-color: #fff;
+  --highlight-text-color: #36d5f9;
+}
+
 /* Reset default styles */
 * {
   margin: 0;
@@ -8,13 +17,12 @@
 /* Global styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: var(--tertiary-color);
 }
 
 /* Header styles */
 header {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--secondary-color);
   padding: 20px;
 }
 
@@ -29,13 +37,24 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff;
+  color: var(--highlight-text-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: var(--secondary-text-color);
+  font-weight: bolder;
   text-decoration: none;
 }
 
 /* Main styles */
 main {
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  color: var(--secondary-text-color)
 }
 
 section {
@@ -53,19 +72,11 @@ p {
 
 /* Footer styles */
 footer {
-  background-color: #333;
+  background-color: var(--secondary-color);
+  max-height: 100%;
   color: #fff;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
-}
-
-/* Contact section styles */
-#contact {
-  text-align: center;
-}
-
-#contact h2 {
-  margin-bottom: 10px;
 }
 
 /* Projects section styles */
@@ -73,6 +84,24 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+}
+
+.project-card {
+  display: block;
+  background-color: var(--secondary-color);
+  color: var(--secondary-text-color);
+  padding: 20px;
+  border-radius: 7px;
+}
+
+.project-card h3 {
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: var(--highlight-text-color);
+
+  
 }
 
 /* Add your own custom styles below this line */
@@ -84,7 +113,7 @@ footer {
 
 #project-form h3 {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 #project-form label {
@@ -92,15 +121,19 @@ footer {
   margin-bottom: 5px;
 }
 
-#project-form input,
-#project-form textarea {
+#project-form input, textarea {
   width: 100%;
   padding: 5px;
+  color: var(--secondary-text-color);
   margin-bottom: 10px;
+  background-color: var(--secondary-color);
+  border-style: none;
+  border-radius: 7px;
+  
 }
 
 #project-form button {
-  background-color: #333;
+  background-color: var(--highlight-text-color);
   color: #fff;
   padding: 10px 20px;
   border: none;
