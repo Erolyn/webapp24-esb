@@ -1,10 +1,24 @@
 import { serve } from "@hono/node-server";
-import { serveStatic } from "@hono/node-server/serve-static";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
+import { UUID } from "node:crypto";
 import fs from "node:fs/promises";
 
-// Import necessary modules
+// TODO: Refactor code
+
+        // 1. Use TypeScript more consistently - DONE (partially?)
+
+// Project-type
+type Project = {
+    id: UUID;
+    title: string;
+    image?: string;
+    description: string;
+    startDate: Date;
+    endDate?: Date;
+    status: string;
+    createdAt: Date;
+}
 
 // Create a new Hono application
 const app = new Hono();
@@ -12,14 +26,11 @@ const app = new Hono();
 // Enable CORS (Cross-Origin Resource Sharing) for all routes
 app.use("/*", cors());
 
-// Set up static file serving for files in the "static" folder
-app.use("/static/*", serveStatic({ root: "./" }));
-
 // Define a GET route to fetch projects
 app.get("/projects", async (c) => {
     try {
         const data = await fs.readFile('./data/projects/projects.json', 'utf8');
-        const projects = JSON.parse(data);
+        const projects : Project[] = JSON.parse(data);
         return c.json(projects);
     } catch (error) {
         console.error("Error fetching projects:", error);
@@ -30,7 +41,7 @@ app.get("/projects", async (c) => {
 // Define a POST route to add a new project
 app.post("/projects", async (c) => {
     try {
-        const newProject = await c.req.json();
+        const newProject: Project = await c.req.json();
         // Add the new project to the projects.json file
         const data = await fs.readFile('./data/projects/projects.json', 'utf8');
         const projects = JSON.parse(data);
