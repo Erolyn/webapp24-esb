@@ -1,11 +1,11 @@
 {
-    "id": 1,
+    "id": "eeb90a0f-26d1-4721-a398-867d697c431b",
     "title": "Project 1",
     "image": "https://via.placeholder.com/150",
-    "description": "Description 1",
-    "startDate": "2024-08-20",
+    "description": "This is a small project just to test if the portfolio works.",
+    "startDate": "2024-04-09",
     "endDate": "",
     "status": "1",
-    "createdAt": "2024-08-20"
+    "createdAt": "2024-09-04T13:15:41.145Z"
 }
 
