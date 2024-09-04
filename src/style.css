@@ -1,9 +1,24 @@
+/* Default light mode styles */
 :root {
   --primary-color: #ffffff;
-  --secondary-color: #141414;
-  --tertiary-color: #1b1b1b;
-  --primary-text-color: #000;
-  --secondary-text-color: #fff;
+  --secondary-color: #414141;
+  --tertiary-color: #e7e7e7;
+  --highlight-color: #bebebe;
+  --hover-color: #afafaf;
+  --primary-text-color: #000000;
+  --secondary-text-color: #f8f8f8;
+  --highlight-text-color: #ffffff;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  --primary-color: #000000;
+  --secondary-color: #1e1e1e;
+  --tertiary-color: #2c2c2c;
+  --highlight-color: #14bd93;
+  --hover-color: #128b6d;
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #e0e0e0;
   --highlight-text-color: #14bd93;
 }
 
@@ -17,7 +32,7 @@
 /* Global styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--tertiary-color);
+  background-color: var(--primary-color);
 }
 
 /* Header styles */
@@ -25,7 +40,6 @@ header {
   background-color: var(--secondary-color);
   padding: 20px;
   min-height: 50px;
-  
 }
 
 nav {
@@ -63,11 +77,17 @@ nav ul li a:hover {
 /* Main styles */
 main {
   padding: 20px 5rem;
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
 }
 
 section {
   margin-bottom: 20px;
+}
+
+#about {
+  width: 80%;
+  padding-bottom: 20px;
+  margin: auto;
 }
 
 h2 {
@@ -81,8 +101,9 @@ p {
 
 /* Footer styles */
 footer {
+  display: flex;
   background-color: var(--secondary-color);
-  color: #fff;
+  color:var(--primary-text-color);
   padding: 10px;
   text-align: center;
   position: fixed;
@@ -90,6 +111,16 @@ footer {
   left: 0;
   width: 100%;
   min-height: 50px;
+  
+}
+
+footer #toggle-darkmode{
+  background-color: var(--highlight-color);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+  font-weight: bolder;
 }
 
 /* Project section styles */
@@ -103,8 +134,8 @@ footer {
 
 .project-card {
   display: block;
-  background-color: var(--secondary-color);
-  color: var(--secondary-text-color);
+  background-color: var(--tertiary-color);
+  color: var(--primary-text-color);
   font-size: min(15px, 5vw);
   padding: 20px;
   border-radius: 7px;
@@ -115,15 +146,35 @@ footer {
   font-size: min(20px, 5vw);
   text-transform: uppercase;
   margin-bottom: 10px;
-  color: var(--highlight-text-color);
+  color: var(--primary-text-color);
 }
+
+.project-card button {
+  background-color: var(--highlight-color);
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+  font-weight: bolder;
+}
+
+.project-card button a {
+  color: var(--secondary-text-color);
+  text-decoration: none;
+}
+
+.project-card button:hover {
+  background-color: var(--hover-color);
+}
+
 
 
 /* Custom styles for the project form */
 #project-form-container {
   display: none; 
   padding: 20px 5rem;
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
   width: 50%;
   margin: auto;
 }
@@ -147,21 +198,22 @@ footer {
   padding: 10px;
   color: var(--primary-text-color);
   margin-bottom: 10px;
-  background-color: var(--primary-color);
+  background-color: var(--tertiary-color);
   border-style: none;
   border-radius: 7px;
 }
 
 #project-form button {
-  background-color: var(--highlight-text-color);
+  background-color: var(--highlight-color);
   color: var(--secondary-text-color);
   padding: 10px 20px;
   border: none;
   cursor: pointer;
   border-radius: 7px;
   font-weight: bolder;
+  color: var(--primary-text-color)
 }
 
 #project-form button:hover {
-  background-color: #555;
+  background-color: var(--hover-color);
 }
