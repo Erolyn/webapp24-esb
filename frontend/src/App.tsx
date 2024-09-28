@@ -8,17 +8,9 @@ function App() {
 
   return (
     <div>
-      <h1>{student}</h1>
-      <p>
-        {degree} {points} studiepoeng
-      </p>
-      <p>
-        {experienceOne}
-      </p>
-      <p>
-        {experienceTwo}
-      </p>
-      <p>{email}</p>
+      <Header student={student} degree={degree} points={points} />
+      <Experiences experienceOne={experienceOne} experienceTwo={experienceTwo} />
+      <Contact email={email} />
     </div>
   )
 }
