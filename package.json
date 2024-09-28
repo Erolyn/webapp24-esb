@@ -1,0 +1,29 @@
+{
+  "name": "portfolio-esb",
+  "version": "1.0.0",
+  "directories": {
+    "doc": "documentation"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "dev": "concurrently -n frontend,backend -c green,blue \"npm run dev:frontend\" \"npm run dev:backend\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minttuNB/portfolio-wa24.git"
+  },
+  "author": "minttuNB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minttuNB/portfolio-wa24/issues"
+  },
+  "homepage": "https://github.com/minttuNB/portfolio-wa24#readme",
+  "description": ""
+}

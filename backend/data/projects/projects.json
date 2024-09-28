@@ -1,0 +1,19 @@
+[
+  {
+    "id": "eeb90a0f-26d1-4721-a398-867d697c431b",
+    "title": "Example project 1",
+    "image": "https://via.placeholder.com/150",
+    "description": "This is a placeholder for projects to be added. The intention of this project card is to display the general layout of the application.",
+    "category": "Development",
+    "startDate": "2024-09-04T00:00:00.145Z",
+    "endDate": null
+  },
+  {
+    "id": "c35dce15-8320-496e-8fd2-11d2177f7aa6",
+    "title": "Example Project 2",
+    "description": "This is a placeholder for projects to be added. The intention of this project card is to display the general layout of the application.",
+    "category": "Design",
+    "startDate": "2024-09-04T00:00:00.000Z",
+    "endDate": null
+  }
+]
